@@ -35,14 +35,13 @@ export function ProfileSidebar({ isOpen, onClose }: ProfileSidebarProps) {
 
   return (
     <>
-      {/* Optional: Backdrop for better UX, especially on mobile */}
       <div
         className="fixed inset-0 bg-black/30 z-20 md:hidden"
         onClick={onClose}
         aria-hidden="true"
       />
       <aside
-        className="fixed top-0 right-0 h-screen w-72 max-w-xs z-30 overflow-y-auto bg-background border-l border-border"
+        className="fixed top-0 right-0 h-screen w-72 max-w-xs z-30 overflow-y-auto bg-black border-l border-border"
         style={{ viewTransitionName: "profile-sidebar" }}
       >
         <Card className="h-full rounded-none shadow-none border-0">

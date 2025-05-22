@@ -48,7 +48,7 @@ export default function RootLayout({
           >
             <h1 className="text-3xl font-bold text-center mb-12">Our Team</h1>
           </ViewTransition>
-          <main className="w-5xl mx-auto">
+          <main className="w-full mx-auto">
             <ViewTransition default="none">{children}</ViewTransition>
           </main>
         </ThemeProvider>
