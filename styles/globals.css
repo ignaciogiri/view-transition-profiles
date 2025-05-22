@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
 
 /* Opt-in to cross-document view transitions */
 @view-transition {
@@ -76,34 +78,34 @@ body {
   background-size: 40px 40px;
 }
 
-header {
-  position: relative;
-  z-index: 50;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+/* Ensure prose text color in dark mode uses the theme's foreground variable */
+.prose.dark\\:prose-invert {
+  color: var(--foreground);
 }
 
-header::before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 10%;
-  right: 10%;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(16, 185, 129, 0.7),
-    transparent
-  );
-  filter: blur(2px);
-  border-radius: 0 0 4px 4px;
+/* You might need to target specific elements if the above is not enough */
+/* For example:
+.prose.dark\\:prose-invert h1,
+.prose.dark\\:prose-invert h2,
+.prose.dark\\:prose-invert h3,
+.prose.dark\\:prose-invert h4,
+.prose.dark\\:prose-invert p,
+.prose.dark\\:prose-invert a,
+.prose.dark\\:prose-invert strong,
+.prose.dark\\:prose-invert li::marker,
+.prose.dark\\:prose-invert blockquote {
+  color: var(--foreground);
 }
-
-header img {
-  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
-  transition: transform 0.3s ease, filter 0.3s ease;
-  animation: float 6s ease-in-out infinite;
+*/
+/* Ensure links also use a contrasting color in dark mode if needed */
+/*
+.prose.dark\\:prose-invert a {
+  color: var(--primary); // Or another suitable variable for links in dark mode
 }
+.prose.dark\\:prose-invert a:hover {
+  color: var(--primary-foreground); // Example hover color
+}
+*/
 
 @keyframes float {
   0% {

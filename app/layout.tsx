@@ -3,6 +3,7 @@ import { unstable_ViewTransition as ViewTransition } from "react";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeMode } from "@/components/theme-mode";
 import "@/styles/globals.css";
 
 const geist = Geist({
@@ -34,10 +35,15 @@ export default function RootLayout({
       <body className={`${geist.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
+          {/* Theme toggle in top right */}
+          <div className="absolute top-4 left-4 z-50">
+            <ThemeMode />
+          </div>
+
           <ViewTransition
             name="nav"
             share={{
