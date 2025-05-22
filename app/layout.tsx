@@ -46,7 +46,9 @@ export default function RootLayout({
               "nav-back": "slide-back",
             }}
           >
-            <h1 className="text-3xl font-bold text-center mb-12">Our Team</h1>
+            <h1 className="text-3xl font-bold text-center mt-12">
+              View Transition Test
+            </h1>
           </ViewTransition>
           <main className="w-full mx-auto">
             <ViewTransition default="none">{children}</ViewTransition>
